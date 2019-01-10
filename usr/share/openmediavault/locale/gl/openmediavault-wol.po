@@ -1,0 +1,99 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the openmediavault-wol package.
+# 
+# Translators:
+# Miguel Anxo Bouzada <mbouzada@gmail.com>, 2014
+msgid ""
+msgstr ""
+"Project-Id-Version: openmediavault-wol\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-11 11:30-0600\n"
+"PO-Revision-Date: 2017-11-11 17:30+0000\n"
+"Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
+"Language-Team: Galician (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-wol/language/gl/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: gl\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Add system"
+msgstr "Engadir un sistema"
+
+msgid "Are you sure you want to enter standy mode?"
+msgstr "Confirma que quere entrar en modo de espera?"
+
+msgid "Confirmation"
+msgstr "Confirmación"
+
+msgid "Edit system"
+msgstr "Editar o sistema"
+
+msgid "Entering standby mode..."
+msgstr "Entrando en modo de espera..."
+
+msgid "IP Address"
+msgstr "Enderezo IP"
+
+msgid "MAC Address"
+msgstr "Enderezo MAC"
+
+msgid "Name"
+msgstr "Nome"
+
+msgid "No - Don't suspend. Sets RTC wakeup time only."
+msgstr "Non - Non poñer en suspensión. Establecer só o tempo de activación RTC."
+
+msgid ""
+"On - Don't suspend but read RTC device until alarm time appears. This mode "
+"is useful for debugging."
+msgstr "Acender - Non poñer en suspensión mais ler o dispositivo RTC ata que apareza a hora de alarma. Este modo é útil para a depuración."
+
+msgid "Please select a network adapter from the dropdown."
+msgstr ""
+
+msgid "Poweroff - ACPI state S5"
+msgstr "Apagar - Estado ACPI S5"
+
+msgid "Rtcwake"
+msgstr "ActivaciónRTC"
+
+msgid "Scan"
+msgstr "Examinar"
+
+msgid "Scanning network for systems to add..."
+msgstr "Examinado a rede na busca de sistemas que engadir..."
+
+msgid "Send"
+msgstr "Enviar"
+
+msgid "Settings"
+msgstr "Axustes"
+
+msgid "Standby"
+msgstr "Espera"
+
+msgid "Standby - ACPI state S1"
+msgstr "Espera - Estado ACPI S1"
+
+msgid "Standby Mode"
+msgstr "Modo de espera"
+
+msgid "Standby Time"
+msgstr "Tempo de espera"
+
+msgid "Suspend-to-Disk - ACPI state S4"
+msgstr "Suspender a disco - Estado ACPI S4"
+
+msgid "Suspend-to-RAM - ACPI state S3"
+msgstr "Suspender a RAM - Estado ACPI S3"
+
+msgid "Systems"
+msgstr "Sistemas"
+
+msgid "WOL"
+msgstr "WOL"
+
+msgid "n/a"
+msgstr ""

@@ -1,0 +1,99 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the openmediavault-wol package.
+# 
+# Translators:
+# Stefan Thrane Overby <stoverby@gmail.com>, 2014-2015
+msgid ""
+msgstr ""
+"Project-Id-Version: openmediavault-wol\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-11 11:30-0600\n"
+"PO-Revision-Date: 2017-11-11 17:30+0000\n"
+"Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
+"Language-Team: Danish (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-wol/language/da/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: da\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Add system"
+msgstr "Tilføj system"
+
+msgid "Are you sure you want to enter standy mode?"
+msgstr "Er du sikker på, at du vil gå i standby tilstand?"
+
+msgid "Confirmation"
+msgstr "Bekræftelse"
+
+msgid "Edit system"
+msgstr "Rediger system"
+
+msgid "Entering standby mode..."
+msgstr "Går i standby tilstand..."
+
+msgid "IP Address"
+msgstr "IP adresse"
+
+msgid "MAC Address"
+msgstr "MAC adresse"
+
+msgid "Name"
+msgstr "Navn"
+
+msgid "No - Don't suspend. Sets RTC wakeup time only."
+msgstr "Nej - Luk ikke. Indstil kun RTC wakeup tid."
+
+msgid ""
+"On - Don't suspend but read RTC device until alarm time appears. This mode "
+"is useful for debugging."
+msgstr "Til - Luk ikke med læs RTC enheder indtil alarmtid fremkommer. Denne tilstand er brugbar til debugging."
+
+msgid "Please select a network adapter from the dropdown."
+msgstr ""
+
+msgid "Poweroff - ACPI state S5"
+msgstr "Luk Ned - ACPI tilstand S5"
+
+msgid "Rtcwake"
+msgstr "Rtcwake"
+
+msgid "Scan"
+msgstr "Scan"
+
+msgid "Scanning network for systems to add..."
+msgstr "Scanner netværk efter systemer, der kan tilføjes"
+
+msgid "Send"
+msgstr "Send"
+
+msgid "Settings"
+msgstr "Indstillinger"
+
+msgid "Standby"
+msgstr "Standby"
+
+msgid "Standby - ACPI state S1"
+msgstr "Standby - ACPI tilstand S1"
+
+msgid "Standby Mode"
+msgstr "Standby Tilstand"
+
+msgid "Standby Time"
+msgstr "Standby Tid"
+
+msgid "Suspend-to-Disk - ACPI state S4"
+msgstr "Dvale - ACPI tilstand S4"
+
+msgid "Suspend-to-RAM - ACPI state S3"
+msgstr "Slumre - ACPI tilstand S3"
+
+msgid "Systems"
+msgstr "Systemer"
+
+msgid "WOL"
+msgstr "WOL"
+
+msgid "n/a"
+msgstr ""

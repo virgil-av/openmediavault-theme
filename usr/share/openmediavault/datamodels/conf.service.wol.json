@@ -1,0 +1,53 @@
+{
+	"type": "config",
+	"id": "conf.service.wol",
+	"title": "WoL",
+	"queryinfo": {
+		"xpath": "//services/wol",
+		"iterable": false
+	},
+	"properties": {
+		"standbyhour": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 23,
+			"default": 0
+		},
+		"standbyminute": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 59,
+			"default": 0
+		},
+		"mode": {
+			"type": "string",
+			"default": "standby"
+		},
+		"systems": {
+			"type": "object",
+			"properties": {
+				"system": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"uuid": {
+								"type": "string",
+								"format": "uuidv4"
+							},
+							"name": {
+								"type": "string"
+							},
+							"mac": {
+								"type": "string"
+							},
+							"ip": {
+								"type": "string"
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

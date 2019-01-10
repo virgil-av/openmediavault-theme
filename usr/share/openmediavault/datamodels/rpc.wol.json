@@ -1,0 +1,75 @@
+[{
+	"type": "rpc",
+	"id": "rpc.wol.setwake",
+	"params": {
+		"type": "object",
+		"properties": {
+			"standbyhour": {
+			    "type": "integer",
+			    "minimum": 0,
+				"maximum": 23,
+		        "required": true
+			},
+			"standbyminute": {
+			    "type": "integer",
+			    "minimum": 0,
+				"maximum": 59,
+		        "required": true
+			},
+			"mode": {
+			    "type": "string",
+				"enum": [
+					"standby",
+					"mem",
+					"disk",
+					"off",
+					"no",
+					"on"
+				],
+		        "required": true
+			}
+		}
+	}
+},{
+	"type": "rpc",
+	"id": "rpc.wol.setsystem",
+	"params": {
+		"type": "object",
+		"properties": {
+			"uuid": {
+				"type": "string",
+				"format": "uuidv4",
+				"required": true
+			},
+			"name": {
+			    "type": "string",
+				"required": true
+			},
+			"mac": {
+			    "type": "string",
+				"required": true
+			},
+			"ip": {
+			    "type": "string",
+				"required": true
+			}
+		}
+	}
+},{
+	"type": "rpc",
+	"id": "rpc.wol.send",
+	"params": {
+		"type": "object",
+		"properties": {
+			"uuid": {
+				"type": "string",
+				"format": "uuidv4",
+				"required": true
+			},
+			"deviceName": {
+			    "type": "string",
+				"required": true
+			}
+		}
+	}
+}]

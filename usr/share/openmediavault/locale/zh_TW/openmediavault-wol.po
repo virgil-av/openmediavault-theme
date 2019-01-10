@@ -1,0 +1,99 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the openmediavault-wol package.
+# 
+# Translators:
+# kochin <kochinc@outlook.com>, 2014
+msgid ""
+msgstr ""
+"Project-Id-Version: openmediavault-wol\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-11 11:30-0600\n"
+"PO-Revision-Date: 2017-11-11 17:30+0000\n"
+"Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
+"Language-Team: Chinese (Taiwan) (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-wol/language/zh_TW/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Add system"
+msgstr "新增系統"
+
+msgid "Are you sure you want to enter standy mode?"
+msgstr "確定要進入待機狀態嗎？"
+
+msgid "Confirmation"
+msgstr "確認"
+
+msgid "Edit system"
+msgstr "編輯系統"
+
+msgid "Entering standby mode..."
+msgstr "進入待機狀態 ..."
+
+msgid "IP Address"
+msgstr "IP 地址"
+
+msgid "MAC Address"
+msgstr "MAC 地址"
+
+msgid "Name"
+msgstr "名稱"
+
+msgid "No - Don't suspend. Sets RTC wakeup time only."
+msgstr "不 - 不要暫停。只設定 RTC 喚醒時間。"
+
+msgid ""
+"On - Don't suspend but read RTC device until alarm time appears. This mode "
+"is useful for debugging."
+msgstr "開啟 - 不要暫停，但讀取 RTC 裝置直到警鈴時間出現。此狀態對偵錯時有用。"
+
+msgid "Please select a network adapter from the dropdown."
+msgstr ""
+
+msgid "Poweroff - ACPI state S5"
+msgstr "關機 - ACPI 狀態 S5"
+
+msgid "Rtcwake"
+msgstr "Rtcwake"
+
+msgid "Scan"
+msgstr "掃描"
+
+msgid "Scanning network for systems to add..."
+msgstr "掃描網路尋查可加入的系統 ..."
+
+msgid "Send"
+msgstr "送出"
+
+msgid "Settings"
+msgstr "設定"
+
+msgid "Standby"
+msgstr "待機"
+
+msgid "Standby - ACPI state S1"
+msgstr "待機 - ACPI 狀態 S1"
+
+msgid "Standby Mode"
+msgstr "待機模式"
+
+msgid "Standby Time"
+msgstr "待機時間"
+
+msgid "Suspend-to-Disk - ACPI state S4"
+msgstr "暫停到磁碟 - ACPI 狀態 S4"
+
+msgid "Suspend-to-RAM - ACPI state S3"
+msgstr "暫停到 RAM - ACPI 狀態 S3"
+
+msgid "Systems"
+msgstr "系統"
+
+msgid "WOL"
+msgstr "網路喚醒"
+
+msgid "n/a"
+msgstr ""

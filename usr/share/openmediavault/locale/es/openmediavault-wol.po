@@ -1,0 +1,99 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the openmediavault-wol package.
+# 
+# Translators:
+# Raul Fernandez Garcia <raulfg3@gmail.com>, 2014
+msgid ""
+msgstr ""
+"Project-Id-Version: openmediavault-wol\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-11 11:30-0600\n"
+"PO-Revision-Date: 2017-11-11 17:30+0000\n"
+"Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
+"Language-Team: Spanish (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-wol/language/es/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Add system"
+msgstr "Añadir equipos"
+
+msgid "Are you sure you want to enter standy mode?"
+msgstr "¿Esta seguro que desea entrar en modo standy?"
+
+msgid "Confirmation"
+msgstr "Confirmación"
+
+msgid "Edit system"
+msgstr "Editar"
+
+msgid "Entering standby mode..."
+msgstr "Entrando en modo standy..."
+
+msgid "IP Address"
+msgstr "IP"
+
+msgid "MAC Address"
+msgstr "MAC"
+
+msgid "Name"
+msgstr "Nombre"
+
+msgid "No - Don't suspend. Sets RTC wakeup time only."
+msgstr "No - No suspender. Activar despertador RTC unicamente."
+
+msgid ""
+"On - Don't suspend but read RTC device until alarm time appears. This mode "
+"is useful for debugging."
+msgstr "On - No suspender, pero mirar el dispositivo RTC hasta que la alarma aparezca. Este modo es útil para tareas de depuración."
+
+msgid "Please select a network adapter from the dropdown."
+msgstr ""
+
+msgid "Poweroff - ACPI state S5"
+msgstr "Poweroff - ACPI Estado S5"
+
+msgid "Rtcwake"
+msgstr "Rtcwake"
+
+msgid "Scan"
+msgstr "Buscar"
+
+msgid "Scanning network for systems to add..."
+msgstr "Buscar en la red equipos a añadir..."
+
+msgid "Send"
+msgstr "Enviar"
+
+msgid "Settings"
+msgstr "Opciones"
+
+msgid "Standby"
+msgstr "Standby"
+
+msgid "Standby - ACPI state S1"
+msgstr "Standby - ACPI Estado S1"
+
+msgid "Standby Mode"
+msgstr "Standby Mode"
+
+msgid "Standby Time"
+msgstr "Standby Time"
+
+msgid "Suspend-to-Disk - ACPI state S4"
+msgstr "Suspend-to-Disk - ACPI Estado S4"
+
+msgid "Suspend-to-RAM - ACPI state S3"
+msgstr "Suspend-to-RAM - ACPI Estado S3"
+
+msgid "Systems"
+msgstr "Equipos"
+
+msgid "WOL"
+msgstr "WOL"
+
+msgid "n/a"
+msgstr ""

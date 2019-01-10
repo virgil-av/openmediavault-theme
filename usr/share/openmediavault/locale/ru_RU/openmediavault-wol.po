@@ -1,0 +1,100 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the openmediavault-wol package.
+# 
+# Translators:
+# Alexander Savchenko, 2015
+# Артур Мудрых <arturmon82@gmail.com>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: openmediavault-wol\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-11 11:30-0600\n"
+"PO-Revision-Date: 2017-11-11 17:30+0000\n"
+"Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
+"Language-Team: Russian (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-wol/language/ru/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+msgid "Add system"
+msgstr "Добавить систему"
+
+msgid "Are you sure you want to enter standy mode?"
+msgstr "Вы действительно хотите перейти в режим ожидания?"
+
+msgid "Confirmation"
+msgstr "Подтверждение"
+
+msgid "Edit system"
+msgstr "Изменить систему"
+
+msgid "Entering standby mode..."
+msgstr "Переход в режим ожидания ..."
+
+msgid "IP Address"
+msgstr "IP-адрес"
+
+msgid "MAC Address"
+msgstr "MAC-адрес"
+
+msgid "Name"
+msgstr "Имя"
+
+msgid "No - Don't suspend. Sets RTC wakeup time only."
+msgstr "Нет. Не приостанавливать. Задает только время пробуждения RTC."
+
+msgid ""
+"On - Don't suspend but read RTC device until alarm time appears. This mode "
+"is useful for debugging."
+msgstr "Вкл. - Не приостанавливать, а считывать устройство RTC до тех пор, пока не появится время сигнала. Этот режим полезен для отладки."
+
+msgid "Please select a network adapter from the dropdown."
+msgstr ""
+
+msgid "Poweroff - ACPI state S5"
+msgstr "Выключение - состояние ACPI S5"
+
+msgid "Rtcwake"
+msgstr ""
+
+msgid "Scan"
+msgstr "Сканирование"
+
+msgid "Scanning network for systems to add..."
+msgstr "Сканирование сети для добавления систем ..."
+
+msgid "Send"
+msgstr "Послать"
+
+msgid "Settings"
+msgstr "Настройки"
+
+msgid "Standby"
+msgstr "Ожидание"
+
+msgid "Standby - ACPI state S1"
+msgstr "Режим ожидания - состояние ACPI S1"
+
+msgid "Standby Mode"
+msgstr "Режим ожидания"
+
+msgid "Standby Time"
+msgstr "Время ожидания"
+
+msgid "Suspend-to-Disk - ACPI state S4"
+msgstr "Сохранить на диск - состояние ACPI S4"
+
+msgid "Suspend-to-RAM - ACPI state S3"
+msgstr "Сохранить на диск - состояние ACPI S3"
+
+msgid "Systems"
+msgstr "Системы"
+
+msgid "WOL"
+msgstr "WOL"
+
+msgid "n/a"
+msgstr ""

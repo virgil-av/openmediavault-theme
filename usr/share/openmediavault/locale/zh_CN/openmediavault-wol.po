@@ -1,0 +1,99 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the openmediavault-wol package.
+# 
+# Translators:
+# songming <by@songming.me>, 2014
+msgid ""
+msgstr ""
+"Project-Id-Version: openmediavault-wol\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-11 11:30-0600\n"
+"PO-Revision-Date: 2017-11-11 17:30+0000\n"
+"Last-Translator: Aaron Murray <aaronmurray27@gmail.com>\n"
+"Language-Team: Chinese (China) (http://www.transifex.com/openmediavault-plugin-developers/openmediavault-wol/language/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Add system"
+msgstr "添加系统"
+
+msgid "Are you sure you want to enter standy mode?"
+msgstr "你确定要进入待机模式？"
+
+msgid "Confirmation"
+msgstr "确认"
+
+msgid "Edit system"
+msgstr "编辑系统"
+
+msgid "Entering standby mode..."
+msgstr "进入待机模式..."
+
+msgid "IP Address"
+msgstr "IP地址"
+
+msgid "MAC Address"
+msgstr "MAC地址"
+
+msgid "Name"
+msgstr "名称"
+
+msgid "No - Don't suspend. Sets RTC wakeup time only."
+msgstr "No - 不挂起，仅设置RTC唤醒时间。"
+
+msgid ""
+"On - Don't suspend but read RTC device until alarm time appears. This mode "
+"is useful for debugging."
+msgstr "On - 不挂起但读取RTC设备直到预设时间，这个模式在调试时有用。"
+
+msgid "Please select a network adapter from the dropdown."
+msgstr ""
+
+msgid "Poweroff - ACPI state S5"
+msgstr "关机 - ACPI状态 S5"
+
+msgid "Rtcwake"
+msgstr "Rtcwake"
+
+msgid "Scan"
+msgstr "扫描"
+
+msgid "Scanning network for systems to add..."
+msgstr "扫描网络准备添加 ..."
+
+msgid "Send"
+msgstr "发送"
+
+msgid "Settings"
+msgstr "设置"
+
+msgid "Standby"
+msgstr "待机"
+
+msgid "Standby - ACPI state S1"
+msgstr "待机 - ACPI状态 S1"
+
+msgid "Standby Mode"
+msgstr "待机模式"
+
+msgid "Standby Time"
+msgstr "待机时间"
+
+msgid "Suspend-to-Disk - ACPI state S4"
+msgstr "挂起到硬盘 - ACPI状态 S4"
+
+msgid "Suspend-to-RAM - ACPI state S3"
+msgstr "挂起到内存 - ACPI状态 S3"
+
+msgid "Systems"
+msgstr "系统"
+
+msgid "WOL"
+msgstr "WOL"
+
+msgid "n/a"
+msgstr ""
