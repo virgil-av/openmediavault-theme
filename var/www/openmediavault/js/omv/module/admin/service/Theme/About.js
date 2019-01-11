@@ -3,7 +3,7 @@ Ext.define('OMV.module.admin.service.theme.About', {
 
     // This path tells which RPC module and methods this panel will call to get
     // and fetch its form values.
-    rpcService: 'Example',
+    rpcService: 'Theme',
     rpcGetMethod: 'getSettings',
     rpcSetMethod: 'setSettings',
 
@@ -19,34 +19,14 @@ Ext.define('OMV.module.admin.service.theme.About', {
             fieldDefaults: {
                 labelSeparator: ''
             },
-            // The items array contains items inside the fieldset xtype.
-            items: [{
-                xtype: 'checkbox',
-                // The name option is sent together with is value to RPC
-                // and is also used when fetching from the RPC.
-                name: 'enable',
-                fieldLabel: _('Enable'),
-                // checked sets the default value of a checkbox.
-                checked: false
-            },
-                {
-                    xtype: 'numberfield',
-                    name: 'max_value',
-                    fieldLabel: _('Max value'),
-                    minValue: 0,
-                    maxValue: 100,
-                    allowDecimals: false,
-                    allowBlank: true
-                }]
         }];
     }
 });
-
 
 OMV.WorkspaceManager.registerPanel({
     id: 'about',
     path: '/service/theme',
     text: _('About'),
-    position: 20,
+    position: 10,
     className: 'OMV.module.admin.service.theme.About'
 });

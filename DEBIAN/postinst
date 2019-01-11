@@ -1,5 +1,6 @@
 #!/bin/sh
 
+
 set -e
 
 . /etc/default/openmediavault
@@ -7,6 +8,10 @@ set -e
 
 case "$1" in
     configure)
+        # Activate package triggers. These triggers are only set during the
+        # package installation.
+        dpkg-trigger update-fixperms
+        dpkg-trigger update-locale
 
         # Initialize and migrate configuration database.
         echo "Updating configuration database ..."
