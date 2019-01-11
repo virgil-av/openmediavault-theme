@@ -1,9 +1,9 @@
 {
 	"type": "config",
-	"id": "conf.service.wol",
-	"title": "WoL",
+	"id": "conf.service.theme",
+	"title": "Theme Changer",
 	"queryinfo": {
-		"xpath": "//services/wol",
+		"xpath": "//services/theme",
 		"iterable": false
 	},
 	"properties": {

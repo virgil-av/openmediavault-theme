@@ -1,6 +1,6 @@
 [{
 	"type": "rpc",
-	"id": "rpc.wol.setwake",
+	"id": "rpc.theme.setwake",
 	"params": {
 		"type": "object",
 		"properties": {
@@ -32,7 +32,7 @@
 	}
 },{
 	"type": "rpc",
-	"id": "rpc.wol.setsystem",
+	"id": "rpc.theme.setsystem",
 	"params": {
 		"type": "object",
 		"properties": {
@@ -57,7 +57,7 @@
 	}
 },{
 	"type": "rpc",
-	"id": "rpc.wol.send",
+	"id": "rpc.theme.send",
 	"params": {
 		"type": "object",
 		"properties": {
