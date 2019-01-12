@@ -7,9 +7,9 @@
     "iterable": false
   },
   "properties": {
-    "mode": {
+    "theme_select": {
       "type": "string",
-      "default": "standby"
+      "default": "default"
     }
   }
 }

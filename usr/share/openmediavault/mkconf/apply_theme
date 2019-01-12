@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+THEME_NAME=$1
+
+. /etc/default/openmediavault
+. /usr/share/openmediavault/scripts/helper-functions
+
+. /root/omv-theme/app/functions/themes-functions.sh; apply_theme $THEME_NAME
+
+exit 0

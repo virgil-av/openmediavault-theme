@@ -25,7 +25,7 @@ Ext.define('OMV.module.admin.service.theme.About', {
 
 OMV.WorkspaceManager.registerPanel({
     id: 'about',
-    path: '/service/theme',
+    path: '/system/theme',
     text: _('About'),
     position: 10,
     className: 'OMV.module.admin.service.theme.About'

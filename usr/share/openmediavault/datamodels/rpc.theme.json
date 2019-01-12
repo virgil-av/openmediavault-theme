@@ -4,15 +4,19 @@
   "params": {
     "type": "object",
     "properties": {
-      "mode": {
+      "theme_select": {
         "type": "string",
         "enum": [
-          "standby",
-          "mem",
-          "disk",
-          "off",
-          "no",
-          "on"
+          "default",
+          "theme-blackish",
+          "theme-sour-cherry",
+          "theme-green-peace",
+          "theme-old-gold",
+          "theme-condensed-black",
+          "theme-black-and-white",
+          "theme-santas-elf",
+          "theme-dracula"
+
         ],
         "required": true
       }

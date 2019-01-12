@@ -37,17 +37,21 @@ class OMVRpcServiceTheme extends \OMV\Rpc\ServiceAbstract
         $this->validateMethodContext($context, ['role' => OMV_ROLE_ADMINISTRATOR]);
         // Validate the parameters of the RPC service method.
         $this->validateMethodParams($params, 'rpc.theme.settheme');
+
         // Get the existing configuration object.
         $db = \OMV\Config\Database::getInstance();
         $object = $db->get('conf.service.theme');
         $object->setAssoc($params);
         $db->set($object);
 
-        $cmd = 'echo '. $params['mode'] . ' >> /root/omv-theme/test';
-        $process = new OMV\System\Process($cmd);
-        $process->execute();
+        // run script to apply theme
+        $cmd = new \OMV\System\Process("omv-mkconf", "apply_theme", escapeshellarg($params['theme_select']));
+        $cmd->setRedirect2to1();
+        $cmd->execute();
 
         // Return the configuration object.
         return $object->getAssoc();
     }
+
+
 }
