@@ -10,6 +10,10 @@
     "theme_select": {
       "type": "string",
       "default": "default"
+    },
+    "logo_url": {
+      "type": "string",
+      "default": "https://i.ibb.co/vXk1SG2/logo.png"
     }
   }
 }

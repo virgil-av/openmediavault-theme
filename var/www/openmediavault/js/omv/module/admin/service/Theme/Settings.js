@@ -13,19 +13,23 @@ Ext.define('OMV.module.admin.service.theme.Settings', {
     // and fetch its form values.
     rpcService: 'Theme',
     rpcGetMethod: 'getSettings',
-    rpcSetMethod: 'setSettings',
-    rpcRefreshPage: 'refreshPage',
+    rpcSetTheme: 'setTheme',
+    rpcSetLogo: 'setLogo',
+
+    // hide the top save button
+    hideOkButton: true,
 
     // getFormItems is a method which is automatically called in the
     // instantiation of the panel. This method returns all fields for
     // the panel.
     getFormItems: function() {
         var me = this;
-        return [{
+        return [
+            {
             // xtype defines the type of this entry. Some different types
             // is: fieldset, checkbox, textfield and numberfield.
             xtype: 'fieldset',
-            title: _('Theme select'),
+            title: _('Theme selector'),
             fieldDefaults: {
                 labelSeparator: ''
             },
@@ -34,7 +38,7 @@ Ext.define('OMV.module.admin.service.theme.Settings', {
                 {
                     xtype: 'combo',
                     name: 'theme_select',
-                    fieldLabel: _('Standby Mode'),
+                    fieldLabel: _('Themes'),
                     mode: 'local',
                     store: new Ext.data.SimpleStore({
                         fields: [ 'value', 'text' ],
@@ -66,10 +70,10 @@ Ext.define('OMV.module.admin.service.theme.Settings', {
                     margin: '5 0 5 0',
                     handler: function() {
                         var me = this;
-                        me.doSubmit();
+                        // me.doSubmit();
                         OMV.MessageBox.show({
                             title: _('Confirmation'),
-                            msg: _('Page refresh'),
+                            msg: _('Are you sure you want to apply this theme?'),
                             buttons: Ext.Msg.YESNO,
                             fn: function(answer) {
                                 if (answer !== 'yes')
@@ -78,7 +82,10 @@ Ext.define('OMV.module.admin.service.theme.Settings', {
                                     scope: me,
                                     rpcData: {
                                         service: 'theme',
-                                        method: 'setSettings',
+                                        method: 'setTheme',
+                                        params: {
+                                            theme_select: me.getForm().findField('theme_select').getValue()
+                                        }
                                     },
                                     success: function(id, success, response) {
                                         OMV.confirmPageUnload = false;
@@ -93,23 +100,66 @@ Ext.define('OMV.module.admin.service.theme.Settings', {
                     }
                 }
             ]
-        }];
-    },
+        },
+        {
+            // xtype defines the type of this entry. Some different types
+            // is: fieldset, checkbox, textfield and numberfield.
+            xtype: 'fieldset',
+            title: _('Change logo'),
+            fieldDefaults: {
+                labelSeparator: ''
+            },
+            // The items array contains items inside the fieldset xtype.
+            items: [
+                {
+                    xtype: "textfield",
+                    name: "logo_url",
+                    fieldLabel: _("Logo url"),
+                    displayField: 'text',
+                    value: "https://i.ibb.co/vXk1SG2/logo.png"
 
-    refreshPage: function() {
-        Ext.MessageBox.show({
-            title: _("Information"),
-            msg: _("The page will reload now to let the changes take effect."),
-            modal: true,
-            icon: Ext.MessageBox.INFO,
-            buttons: Ext.MessageBox.OK,
-            fn: function() {
-                // Reload the page.
-                OMV.confirmPageUnload = false;
-                document.location.reload(true);
-            }
-        });
-    },
+                },
+                {
+                    xtype: 'button',
+                    name: 'apply',
+                    text: _('Apply Logo'),
+                    scope: this,
+                    margin: '5 0 5 0',
+                    handler: function() {
+                        var me = this;
+                        // me.doSubmit();
+                        OMV.MessageBox.show({
+                            title: _('Confirmation'),
+                            msg: _('Are you sure you want to apply this logo?'),
+                            buttons: Ext.Msg.YESNO,
+                            fn: function(answer) {
+                                if (answer !== 'yes')
+                                    return;
+                                OMV.Rpc.request({
+                                    scope: me,
+                                    rpcData: {
+                                        service: 'theme',
+                                        method: 'setLogo',
+                                        params: {
+                                            logo_url: me.getForm().findField('logo_url').getValue()
+                                        }
+                                    },
+                                    success: function(id, success, response) {
+                                        OMV.confirmPageUnload = false;
+                                        document.location.reload(true);
+                                        OMV.MessageBox.hide();
+                                    }
+                                });
+                            },
+                            scope: me,
+                            icon: Ext.Msg.QUESTION
+                        });
+                    }
+                }
+            ]
+        }
+    ];
+},
 
 
 });
