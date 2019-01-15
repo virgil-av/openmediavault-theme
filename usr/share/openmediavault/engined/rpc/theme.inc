@@ -20,9 +20,9 @@ class OMVRpcServiceTheme extends \OMV\Rpc\ServiceAbstract
     public function initialize()
     {
         $this->registerMethod('getSettings');
-        $this->registerMethod('genericScriptAndInput');
         $this->registerMethod('setTheme');
         $this->registerMethod('setLogo');
+        $this->registerMethod('resetLogo');
     }
 
     public function getSettings($params, $context)
@@ -35,7 +35,8 @@ class OMVRpcServiceTheme extends \OMV\Rpc\ServiceAbstract
         return $object->getAssoc();
     }
 
-    public function setupDatabase($params, $context){
+    public function setTheme($params, $context)
+    {
         // Validate the RPC caller context.
         $this->validateMethodContext($context, ['role' => OMV_ROLE_ADMINISTRATOR]);
         // Validate the parameters of the RPC service method.
@@ -46,25 +47,43 @@ class OMVRpcServiceTheme extends \OMV\Rpc\ServiceAbstract
         $object = $db->get('conf.service.theme');
         $object->setAssoc($params);
         $db->set($object);
-    }
 
-    public function runScript($scriptName, $params, $paramName){
         // run script to apply theme
-        $cmd = new \OMV\System\Process("omv-mkconf", $scriptName, escapeshellarg($params[$paramName]));
+        $cmd = new \OMV\System\Process("omv-mkconf", "apply_theme", escapeshellarg($params['theme_select']));
         $cmd->setRedirect2to1();
         $cmd->execute();
-    }
 
-    public function setTheme($params, $context)
-    {
-        $this->setupDatabase($params, $context);
-        $this->runScript("apply_theme", $params, "theme_select");
+        // Return the configuration object.
+        return $object->getAssoc();
     }
 
     public function setLogo($params, $context)
     {
-        $this->setupDatabase($params, $context);
-        $this->runScript("apply_logo", $params, "logo_url");
+        // Validate the RPC caller context.
+        $this->validateMethodContext($context, ['role' => OMV_ROLE_ADMINISTRATOR]);
+        // Validate the parameters of the RPC service method.
+        $this->validateMethodParams($params, 'rpc.theme.settheme');
+
+        // Get the existing configuration object.
+        $db = \OMV\Config\Database::getInstance();
+        $object = $db->get('conf.service.theme');
+        $object->setAssoc($params);
+        $db->set($object);
+
+        // run script to apply logo
+        $cmd = new \OMV\System\Process("omv-mkconf", "apply_logo", escapeshellarg($params["logo_url"]));
+        $cmd->setRedirect2to1();
+        $cmd->execute();
+
+        return $object->getAssoc();
+    }
+
+    public function resetLogo($params, $context)
+    {
+        // run script to reset
+        $cmd = new \OMV\System\Process("omv-mkconf", "apply_logo", escapeshellarg($params["logo_url"]));
+        $cmd->setRedirect2to1();
+        $cmd->execute();
     }
 
 

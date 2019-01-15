@@ -18,11 +18,11 @@
           "theme-dracula"
 
         ],
-        "required": true
+        "required": false
       },
       "logo_url": {
         "type": "string",
-        "required": true
+        "required": false
       }
     }
   }

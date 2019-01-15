@@ -121,8 +121,8 @@ Ext.define('OMV.module.admin.service.theme.Settings', {
                 },
                 {
                     xtype: 'button',
-                    name: 'apply',
-                    text: _('Apply Logo'),
+                    name: 'applyLogo',
+                    text: _('Apply custom logo'),
                     scope: this,
                     margin: '5 0 5 0',
                     handler: function() {
@@ -143,6 +143,40 @@ Ext.define('OMV.module.admin.service.theme.Settings', {
                                         params: {
                                             logo_url: me.getForm().findField('logo_url').getValue()
                                         }
+                                    },
+                                    success: function(id, success, response) {
+                                        OMV.confirmPageUnload = false;
+                                        document.location.reload(true);
+                                        OMV.MessageBox.hide();
+                                    }
+                                });
+                            },
+                            scope: me,
+                            icon: Ext.Msg.QUESTION
+                        });
+                    }
+                },
+                {
+                    xtype: 'button',
+                    name: 'resetLogo',
+                    text: _('Reset logo to default'),
+                    scope: this,
+                    margin: '5 0 5 5',
+                    handler: function() {
+                        var me = this;
+                        // me.doSubmit();
+                        OMV.MessageBox.show({
+                            title: _('Confirmation'),
+                            msg: _('Are you sure you want to reset logo to OMV default ?'),
+                            buttons: Ext.Msg.YESNO,
+                            fn: function(answer) {
+                                if (answer !== 'yes')
+                                    return;
+                                OMV.Rpc.request({
+                                    scope: me,
+                                    rpcData: {
+                                        service: 'theme',
+                                        method: 'resetLogo'
                                     },
                                     success: function(id, success, response) {
                                         OMV.confirmPageUnload = false;

@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+LOGO_URL=$1
+
+. /etc/default/openmediavault
+. /usr/share/openmediavault/scripts/helper-functions
+
+. /root/omv-theme/app/functions/ui-js-functions.sh; remove_header_text_or_logo
+
+exit 0
