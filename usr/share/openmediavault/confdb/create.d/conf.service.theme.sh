@@ -11,6 +11,8 @@ if ! omv_config_exists "${SERVICE_XPATH}"; then
     omv_config_add_node "/config/services" "${SERVICE_XPATH_NAME}"
     omv_config_add_key "${SERVICE_XPATH}" "theme_select" "default"
     omv_config_add_key "${SERVICE_XPATH}" "logo_url" "https://i.ibb.co/vXk1SG2/logo.png"
+    omv_config_add_key "${SERVICE_XPATH}" "header_text" "This is a test"
+    omv_config_add_key "${SERVICE_XPATH}" "header_bg_color" "#ff00ff"
 
 fi
 

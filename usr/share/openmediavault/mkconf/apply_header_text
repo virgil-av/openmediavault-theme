@@ -1,0 +1,8 @@
+#!/bin/sh
+
+set -e
+HEADER_TEXT="$1"
+
+. /root/omv-theme/app/functions/ui-js-functions.sh; set_header_text "$HEADER_TEXT"
+
+exit 0

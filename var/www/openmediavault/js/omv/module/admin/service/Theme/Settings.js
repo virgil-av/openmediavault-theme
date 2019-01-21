@@ -15,6 +15,9 @@ Ext.define('OMV.module.admin.service.theme.Settings', {
     rpcGetMethod: 'getSettings',
     rpcSetTheme: 'setTheme',
     rpcSetLogo: 'setLogo',
+    rpcSetHeaderText: 'setHeaderText',
+    rpcSetHeaderBgColor: 'setHeaderBgColor',
+    rpcResetHeaderBgColor: 'resetHeaderBgColor',
 
     // hide the top save button
     hideOkButton: true,
@@ -38,7 +41,7 @@ Ext.define('OMV.module.admin.service.theme.Settings', {
                 {
                     xtype: 'combo',
                     name: 'theme_select',
-                    fieldLabel: _('Themes'),
+                    fieldLabel: _('Theme list'),
                     mode: 'local',
                     store: new Ext.data.SimpleStore({
                         fields: [ 'value', 'text' ],
@@ -101,7 +104,7 @@ Ext.define('OMV.module.admin.service.theme.Settings', {
                 }
             ]
         },
-        {
+            {
             // xtype defines the type of this entry. Some different types
             // is: fieldset, checkbox, textfield and numberfield.
             xtype: 'fieldset',
@@ -191,7 +194,189 @@ Ext.define('OMV.module.admin.service.theme.Settings', {
                     }
                 }
             ]
-        }
+        },
+            {
+            // xtype defines the type of this entry. Some different types
+            // is: fieldset, checkbox, textfield and numberfield.
+            xtype: 'fieldset',
+            title: _('Change header text'),
+            fieldDefaults: {
+                labelSeparator: ''
+            },
+            // The items array contains items inside the fieldset xtype.
+            items: [
+                {
+                    xtype: "textfield",
+                    name: "header_text",
+                    fieldLabel: _("Header text"),
+                    displayField: 'text',
+                    value: "This is a test"
+
+                },
+                {
+                    xtype: 'button',
+                    name: 'applyHeaderText',
+                    text: _('Apply custom header text'),
+                    scope: this,
+                    margin: '5 0 5 0',
+                    handler: function() {
+                        var me = this;
+                        // me.doSubmit();
+                        OMV.MessageBox.show({
+                            title: _('Confirmation'),
+                            msg: _('Are you sure you want to apply this text to header?'),
+                            buttons: Ext.Msg.YESNO,
+                            fn: function(answer) {
+                                if (answer !== 'yes')
+                                    return;
+                                OMV.Rpc.request({
+                                    scope: me,
+                                    rpcData: {
+                                        service: 'theme',
+                                        method: 'setHeaderText',
+                                        params: {
+                                            header_text: me.getForm().findField('header_text').getValue()
+                                        }
+                                    },
+                                    success: function(id, success, response) {
+                                        OMV.confirmPageUnload = false;
+                                        document.location.reload(true);
+                                        OMV.MessageBox.hide();
+                                    }
+                                });
+                            },
+                            scope: me,
+                            icon: Ext.Msg.QUESTION
+                        });
+                    }
+                },
+                {
+                    xtype: 'button',
+                    name: 'resetLogo',
+                    text: _('Reset logo to default'),
+                    scope: this,
+                    margin: '5 0 5 5',
+                    handler: function() {
+                        var me = this;
+                        // me.doSubmit();
+                        OMV.MessageBox.show({
+                            title: _('Confirmation'),
+                            msg: _('Are you sure you want to reset logo to OMV default ?'),
+                            buttons: Ext.Msg.YESNO,
+                            fn: function(answer) {
+                                if (answer !== 'yes')
+                                    return;
+                                OMV.Rpc.request({
+                                    scope: me,
+                                    rpcData: {
+                                        service: 'theme',
+                                        method: 'resetLogo'
+                                    },
+                                    success: function(id, success, response) {
+                                        OMV.confirmPageUnload = false;
+                                        document.location.reload(true);
+                                        OMV.MessageBox.hide();
+                                    }
+                                });
+                            },
+                            scope: me,
+                            icon: Ext.Msg.QUESTION
+                        });
+                    }
+                }
+            ]
+        },
+            {
+            // xtype defines the type of this entry. Some different types
+            // is: fieldset, checkbox, textfield and numberfield.
+            xtype: 'fieldset',
+            title: _('Change header background color'),
+            fieldDefaults: {
+                labelSeparator: ''
+            },
+            // The items array contains items inside the fieldset xtype.
+            items: [
+                {
+                    xtype: "textfield",
+                    name: "header_bg_color",
+                    fieldLabel: _("HEX color code"),
+                    displayField: 'text',
+                    value: "#ff00ff"
+
+                },
+                {
+                    xtype: 'button',
+                    name: 'applyHeaderColor',
+                    text: _('Apply custom header color'),
+                    scope: this,
+                    margin: '5 0 5 0',
+                    handler: function() {
+                        var me = this;
+                        // me.doSubmit();
+                        OMV.MessageBox.show({
+                            title: _('Confirmation'),
+                            msg: _('Are you sure you want to apply this color to header background ?'),
+                            buttons: Ext.Msg.YESNO,
+                            fn: function(answer) {
+                                if (answer !== 'yes')
+                                    return;
+                                OMV.Rpc.request({
+                                    scope: me,
+                                    rpcData: {
+                                        service: 'theme',
+                                        method: 'setHeaderBgColor',
+                                        params: {
+                                            header_bg_color: me.getForm().findField('header_bg_color').getValue()
+                                        }
+                                    },
+                                    success: function(id, success, response) {
+                                        OMV.confirmPageUnload = false;
+                                        document.location.reload(true);
+                                        OMV.MessageBox.hide();
+                                    }
+                                });
+                            },
+                            scope: me,
+                            icon: Ext.Msg.QUESTION
+                        });
+                    }
+                },
+                {
+                    xtype: 'button',
+                    name: 'resetHeaderColour',
+                    text: _('Reset Header Color To Default'),
+                    scope: this,
+                    margin: '5 0 5 5',
+                    handler: function() {
+                        var me = this;
+                        // me.doSubmit();
+                        OMV.MessageBox.show({
+                            title: _('Confirmation'),
+                            msg: _('Are you sure you want to reset header background color to default ?'),
+                            buttons: Ext.Msg.YESNO,
+                            fn: function(answer) {
+                                if (answer !== 'yes')
+                                    return;
+                                OMV.Rpc.request({
+                                    scope: me,
+                                    rpcData: {
+                                        service: 'theme',
+                                        method: 'resetHeaderBgColor'
+                                    },
+                                    success: function(id, success, response) {
+                                        OMV.confirmPageUnload = false;
+                                        document.location.reload(true);
+                                        OMV.MessageBox.hide();
+                                    }
+                                });
+                            },
+                            scope: me,
+                            icon: Ext.Msg.QUESTION
+                        });
+                    }
+                }
+            ]
+        },
     ];
 },
 

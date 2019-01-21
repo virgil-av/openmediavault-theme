@@ -23,6 +23,14 @@
       "logo_url": {
         "type": "string",
         "required": false
+      },
+      "header_text": {
+        "type": "string",
+        "required": false
+      },
+      "header_bg_color": {
+        "type": "string",
+        "required": false
       }
     }
   }

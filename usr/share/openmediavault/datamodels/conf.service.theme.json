@@ -14,6 +14,14 @@
     "logo_url": {
       "type": "string",
       "default": "https://i.ibb.co/vXk1SG2/logo.png"
+    },
+    "header_text": {
+      "type": "string",
+      "default": "This is a test"
+    },
+    "header_bg_color": {
+      "type": "string",
+      "default": "#ff00ff"
     }
   }
 }

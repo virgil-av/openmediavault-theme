@@ -23,6 +23,9 @@ class OMVRpcServiceTheme extends \OMV\Rpc\ServiceAbstract
         $this->registerMethod('setTheme');
         $this->registerMethod('setLogo');
         $this->registerMethod('resetLogo');
+        $this->registerMethod('setHeaderText');
+        $this->registerMethod('setHeaderBgColor');
+        $this->registerMethod('resetHeaderBgColor');
     }
 
     public function getSettings($params, $context)
@@ -78,10 +81,60 @@ class OMVRpcServiceTheme extends \OMV\Rpc\ServiceAbstract
         return $object->getAssoc();
     }
 
+    public function setHeaderText($params, $context)
+    {
+        // Validate the RPC caller context.
+        $this->validateMethodContext($context, ['role' => OMV_ROLE_ADMINISTRATOR]);
+        // Validate the parameters of the RPC service method.
+        $this->validateMethodParams($params, 'rpc.theme.settheme');
+
+        // Get the existing configuration object.
+        $db = \OMV\Config\Database::getInstance();
+        $object = $db->get('conf.service.theme');
+        $object->setAssoc($params);
+        $db->set($object);
+
+        // run script to apply header text
+        $cmd = new \OMV\System\Process("omv-mkconf", "apply_header_text", escapeshellarg($params["header_text"]));
+        $cmd->setRedirect2to1();
+        $cmd->execute();
+
+        return $object->getAssoc();
+    }
+
     public function resetLogo($params, $context)
     {
         // run script to reset
-        $cmd = new \OMV\System\Process("omv-mkconf", "apply_logo", escapeshellarg($params["logo_url"]));
+        $cmd = new \OMV\System\Process("omv-mkconf", "reset_logo");
+        $cmd->setRedirect2to1();
+        $cmd->execute();
+    }
+
+    public function setHeaderBgColor($params, $context)
+    {
+        // Validate the RPC caller context.
+        $this->validateMethodContext($context, ['role' => OMV_ROLE_ADMINISTRATOR]);
+        // Validate the parameters of the RPC service method.
+        $this->validateMethodParams($params, 'rpc.theme.settheme');
+
+        // Get the existing configuration object.
+        $db = \OMV\Config\Database::getInstance();
+        $object = $db->get('conf.service.theme');
+        $object->setAssoc($params);
+        $db->set($object);
+
+        // run script to apply header text
+        $cmd = new \OMV\System\Process("omv-mkconf", "apply_header_bg_color", escapeshellarg($params["header_bg_color"]));
+        $cmd->setRedirect2to1();
+        $cmd->execute();
+
+        return $object->getAssoc();
+    }
+
+    public function resetHeaderBgColor($params, $context)
+    {
+        // run script to apply header text
+        $cmd = new \OMV\System\Process("omv-mkconf", "reset_header_bg_color");
         $cmd->setRedirect2to1();
         $cmd->execute();
     }
