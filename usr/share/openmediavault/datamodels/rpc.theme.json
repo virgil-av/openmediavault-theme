@@ -31,6 +31,31 @@
       "header_bg_color": {
         "type": "string",
         "required": false
+      },
+      "header_bg_image": {
+        "type": "string",
+        "required": false
+      },
+      "font_size": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 100,
+        "required": false
+      },
+      "font_weight": {
+        "type": "string",
+        "enum": [
+          "100",
+          "200",
+          "300",
+          "400",
+          "500",
+          "600",
+          "700",
+          "800",
+          "900"
+        ],
+        "required": false
       }
     }
   }

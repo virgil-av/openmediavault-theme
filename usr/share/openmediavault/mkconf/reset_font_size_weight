@@ -1,0 +1,7 @@
+#!/bin/sh
+
+set -e
+
+. /root/omv-theme/app/functions/ui-css-functions.sh; remove_font_size_and_weight
+
+exit 0

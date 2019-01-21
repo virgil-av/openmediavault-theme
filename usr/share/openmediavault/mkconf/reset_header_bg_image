@@ -1,0 +1,7 @@
+#!/bin/sh
+
+set -e
+
+. /root/omv-theme/app/functions/ui-css-functions.sh; remove_header_bg_img
+
+exit 0

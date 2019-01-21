@@ -22,6 +22,18 @@
     "header_bg_color": {
       "type": "string",
       "default": "#ff00ff"
+    },
+    "header_bg_image": {
+      "type": "string",
+      "default": "https://i.ibb.co/HKb9B7m/hi-tech-concepts-on-blue-background-header.jpg"
+    },
+    "font_size": {
+      "type": "integer",
+      "default": 16
+    },
+    "font_weight": {
+      "type": "string",
+      "default": "400"
     }
   }
 }

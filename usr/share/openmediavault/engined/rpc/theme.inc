@@ -21,11 +21,19 @@ class OMVRpcServiceTheme extends \OMV\Rpc\ServiceAbstract
     {
         $this->registerMethod('getSettings');
         $this->registerMethod('setTheme');
+
         $this->registerMethod('setLogo');
         $this->registerMethod('resetLogo');
         $this->registerMethod('setHeaderText');
+
         $this->registerMethod('setHeaderBgColor');
         $this->registerMethod('resetHeaderBgColor');
+
+        $this->registerMethod('setHeaderBgImage');
+        $this->registerMethod('resetHeaderBgImage');
+
+        $this->registerMethod('setFont');
+        $this->registerMethod('resetFont');
     }
 
     public function getSettings($params, $context)
@@ -135,6 +143,64 @@ class OMVRpcServiceTheme extends \OMV\Rpc\ServiceAbstract
     {
         // run script to apply header text
         $cmd = new \OMV\System\Process("omv-mkconf", "reset_header_bg_color");
+        $cmd->setRedirect2to1();
+        $cmd->execute();
+    }
+
+    public function setHeaderBgImage($params, $context)
+    {
+        // Validate the RPC caller context.
+        $this->validateMethodContext($context, ['role' => OMV_ROLE_ADMINISTRATOR]);
+        // Validate the parameters of the RPC service method.
+        $this->validateMethodParams($params, 'rpc.theme.settheme');
+
+        // Get the existing configuration object.
+        $db = \OMV\Config\Database::getInstance();
+        $object = $db->get('conf.service.theme');
+        $object->setAssoc($params);
+        $db->set($object);
+
+        // run script to apply header text
+        $cmd = new \OMV\System\Process("omv-mkconf", "apply_header_bg_image", escapeshellarg($params["header_bg_image"]));
+        $cmd->setRedirect2to1();
+        $cmd->execute();
+
+        return $object->getAssoc();
+    }
+
+    public function resetHeaderBgImage($params, $context)
+    {
+        // run script to apply header text
+        $cmd = new \OMV\System\Process("omv-mkconf", "reset_header_bg_image");
+        $cmd->setRedirect2to1();
+        $cmd->execute();
+    }
+
+    public function setFont($params, $context)
+    {
+        // Validate the RPC caller context.
+        $this->validateMethodContext($context, ['role' => OMV_ROLE_ADMINISTRATOR]);
+        // Validate the parameters of the RPC service method.
+        $this->validateMethodParams($params, 'rpc.theme.settheme');
+
+        // Get the existing configuration object.
+        $db = \OMV\Config\Database::getInstance();
+        $object = $db->get('conf.service.theme');
+        $object->setAssoc($params);
+        $db->set($object);
+
+        // run script to apply header text
+        $cmd = new \OMV\System\Process("omv-mkconf", "apply_font_size_weight", escapeshellarg($params["font_size"]), escapeshellarg($params["font_weight"]));
+        $cmd->setRedirect2to1();
+        $cmd->execute();
+
+        return $object->getAssoc();
+    }
+
+    public function resetFont($params, $context)
+    {
+        // run script to apply header text
+        $cmd = new \OMV\System\Process("omv-mkconf", "reset_font_size_weight");
         $cmd->setRedirect2to1();
         $cmd->execute();
     }

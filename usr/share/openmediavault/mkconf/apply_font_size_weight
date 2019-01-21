@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -e
+FONT_SIZE="$1"
+FONT_WEIGHT="$2"
+
+. /root/omv-theme/app/functions/ui-css-functions.sh; set_font_size_and_weight "$FONT_SIZE" "$FONT_WEIGHT"
+
+exit 0

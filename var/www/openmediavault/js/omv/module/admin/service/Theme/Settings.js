@@ -13,14 +13,10 @@ Ext.define('OMV.module.admin.service.theme.Settings', {
     // and fetch its form values.
     rpcService: 'Theme',
     rpcGetMethod: 'getSettings',
-    rpcSetTheme: 'setTheme',
-    rpcSetLogo: 'setLogo',
-    rpcSetHeaderText: 'setHeaderText',
-    rpcSetHeaderBgColor: 'setHeaderBgColor',
-    rpcResetHeaderBgColor: 'resetHeaderBgColor',
 
     // hide the top save button
     hideOkButton: true,
+    hideResetButton: true,
 
     // getFormItems is a method which is automatically called in the
     // instantiation of the panel. This method returns all fields for
@@ -119,7 +115,11 @@ Ext.define('OMV.module.admin.service.theme.Settings', {
                     name: "logo_url",
                     fieldLabel: _("Logo url"),
                     displayField: 'text',
-                    value: "https://i.ibb.co/vXk1SG2/logo.png"
+                    value: "https://i.ibb.co/vXk1SG2/logo.png",
+                    plugins: [{
+                        ptype: "fieldinfo",
+                        text: _("Image url should end in .jpg, .png or .gif")
+                    }]
 
                 },
                 {
@@ -362,6 +362,222 @@ Ext.define('OMV.module.admin.service.theme.Settings', {
                                     rpcData: {
                                         service: 'theme',
                                         method: 'resetHeaderBgColor'
+                                    },
+                                    success: function(id, success, response) {
+                                        OMV.confirmPageUnload = false;
+                                        document.location.reload(true);
+                                        OMV.MessageBox.hide();
+                                    }
+                                });
+                            },
+                            scope: me,
+                            icon: Ext.Msg.QUESTION
+                        });
+                    }
+                }
+            ]
+        },
+            {
+            // xtype defines the type of this entry. Some different types
+            // is: fieldset, checkbox, textfield and numberfield.
+            xtype: 'fieldset',
+            title: _('Change header background image'),
+            fieldDefaults: {
+                labelSeparator: ''
+            },
+            // The items array contains items inside the fieldset xtype.
+            items: [
+                {
+                    xtype: "textfield",
+                    name: "header_bg_image",
+                    fieldLabel: _("Image url"),
+                    displayField: 'text',
+                    value: "https://i.ibb.co/HKb9B7m/hi-tech-concepts-on-blue-background-header.jpg",
+                    plugins: [{
+                        ptype: "fieldinfo",
+                        text: _("Image url should end in .jpg, .png or .gif")
+                    }]
+
+                },
+                {
+                    xtype: 'button',
+                    name: 'applyHeaderBgImage',
+                    text: _('Apply custom header image'),
+                    scope: this,
+                    margin: '5 0 5 0',
+                    handler: function() {
+                        var me = this;
+                        // me.doSubmit();
+                        OMV.MessageBox.show({
+                            title: _('Confirmation'),
+                            msg: _('Are you sure you want to apply this image to header background ?'),
+                            buttons: Ext.Msg.YESNO,
+                            fn: function(answer) {
+                                if (answer !== 'yes')
+                                    return;
+                                OMV.Rpc.request({
+                                    scope: me,
+                                    rpcData: {
+                                        service: 'theme',
+                                        method: 'setHeaderBgImage',
+                                        params: {
+                                            header_bg_image: me.getForm().findField('header_bg_image').getValue()
+                                        }
+                                    },
+                                    success: function(id, success, response) {
+                                        OMV.confirmPageUnload = false;
+                                        document.location.reload(true);
+                                        OMV.MessageBox.hide();
+                                    }
+                                });
+                            },
+                            scope: me,
+                            icon: Ext.Msg.QUESTION
+                        });
+                    }
+                },
+                {
+                    xtype: 'button',
+                    name: 'resetHeaderBgImage',
+                    text: _('Reset Header To Default'),
+                    scope: this,
+                    margin: '5 0 5 5',
+                    handler: function() {
+                        var me = this;
+                        // me.doSubmit();
+                        OMV.MessageBox.show({
+                            title: _('Confirmation'),
+                            msg: _('Are you sure you want to reset header background to default ?'),
+                            buttons: Ext.Msg.YESNO,
+                            fn: function(answer) {
+                                if (answer !== 'yes')
+                                    return;
+                                OMV.Rpc.request({
+                                    scope: me,
+                                    rpcData: {
+                                        service: 'theme',
+                                        method: 'resetHeaderBgImage'
+                                    },
+                                    success: function(id, success, response) {
+                                        OMV.confirmPageUnload = false;
+                                        document.location.reload(true);
+                                        OMV.MessageBox.hide();
+                                    }
+                                });
+                            },
+                            scope: me,
+                            icon: Ext.Msg.QUESTION
+                        });
+                    }
+                }
+            ]
+        },
+            {
+            // xtype defines the type of this entry. Some different types
+            // is: fieldset, checkbox, textfield and numberfield.
+            xtype: 'fieldset',
+            title: _('Change font size and weight'),
+            fieldDefaults: {
+                labelSeparator: ''
+            },
+            // The items array contains items inside the fieldset xtype.
+            items: [
+                {
+                    xtype: "numberfield",
+                    name: "font_size",
+                    fieldLabel: _("Font size"),
+                    minValue: 1,
+                    maxValue: 100,
+                    allowDecimals: false,
+                    allowBlank: false,
+                    value: 16
+
+                },
+                {
+                    xtype: 'combo',
+                    name: 'font_weight',
+                    fieldLabel: _('Font weight'),
+                    mode: 'local',
+                    store: new Ext.data.SimpleStore({
+                        fields: [ 'value', 'text' ],
+                        data: [
+                            [ '100', _('Lightest') ],
+                            [ '200', _('200') ],
+                            [ '300', _('300') ],
+                            [ '400', _('Normal') ],
+                            [ '500', _('500') ],
+                            [ '600', _('600') ],
+                            [ '700', _('Bold') ],
+                            [ '800', _('800') ],
+                            [ '900', _('Boldest') ],
+                        ]
+                    }),
+                    displayField: 'text',
+                    valueField: 'value',
+                    allowBlank: false,
+                    editable: false,
+                    triggerAction: 'all',
+                    value: 100
+                },
+                {
+                    xtype: 'button',
+                    name: 'applyFontSizeAndWeight',
+                    text: _('Apply custom font size and weight'),
+                    scope: this,
+                    margin: '5 0 5 0',
+                    handler: function() {
+                        var me = this;
+                        // me.doSubmit();
+                        OMV.MessageBox.show({
+                            title: _('Confirmation'),
+                            msg: _('Are you sure you want to apply font size and weight ?'),
+                            buttons: Ext.Msg.YESNO,
+                            fn: function(answer) {
+                                if (answer !== 'yes')
+                                    return;
+                                OMV.Rpc.request({
+                                    scope: me,
+                                    rpcData: {
+                                        service: 'theme',
+                                        method: 'setFont',
+                                        params: {
+                                            font_size: me.getForm().findField('font_size').getValue(),
+                                            font_weight: me.getForm().findField('font_weight').getValue()
+                                        }
+                                    },
+                                    success: function(id, success, response) {
+                                        OMV.confirmPageUnload = false;
+                                        document.location.reload(true);
+                                        OMV.MessageBox.hide();
+                                    }
+                                });
+                            },
+                            scope: me,
+                            icon: Ext.Msg.QUESTION
+                        });
+                    }
+                },
+                {
+                    xtype: 'button',
+                    name: 'resetHeaderBgImage',
+                    text: _('Reset font to theme default'),
+                    scope: this,
+                    margin: '5 0 5 5',
+                    handler: function() {
+                        var me = this;
+                        // me.doSubmit();
+                        OMV.MessageBox.show({
+                            title: _('Confirmation'),
+                            msg: _('Are you sure you want to reset font to theme default ?'),
+                            buttons: Ext.Msg.YESNO,
+                            fn: function(answer) {
+                                if (answer !== 'yes')
+                                    return;
+                                OMV.Rpc.request({
+                                    scope: me,
+                                    rpcData: {
+                                        service: 'theme',
+                                        method: 'resetFont'
                                     },
                                     success: function(id, success, response) {
                                         OMV.confirmPageUnload = false;
