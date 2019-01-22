@@ -57,9 +57,4 @@ echo "copying files to folders"
 cp -au usr/share/openmediavault/* /usr/share/openmediavault
 cp -au var/www/openmediavault/* /var/www/openmediavault
 
-echo "Clean cache and restart omv rpc service"
-
-. /usr/share/openmediavault/scripts/helper-functions && omv_purge_internal_cache
-service openmediavault-engined restart
-
 exit 0
