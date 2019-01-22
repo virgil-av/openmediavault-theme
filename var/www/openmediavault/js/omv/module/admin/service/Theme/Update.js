@@ -18,7 +18,7 @@ Ext.define('OMV.module.admin.service.theme.Update', {
             "<text x='705' y='150' fill='#010101' fill-opacity='.3' transform='scale(.1)' textLength='1290'>" +
             "openmediavault-theme</text><text x='705' y='140' transform='scale(.1)' textLength='1290'>" +
             "openmediavault-theme</text><text x='1605' y='150' fill='#010101' fill-opacity='.3' transform='scale(.1)' " +
-            "textLength='350'>v0.5.0</text><text x='1605' y='140' transform='scale(.1)' textLength='350'>v0.5.0</text>" +
+            "textLength='350'>v0.5.0</text><text x='1605' y='140' transform='scale(.1)' textLength='350'>v0.5.1</text>" +
             "</g> </svg></div><div> <svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' " +
             "width='118' height='20'><linearGradient id='b' x2='0' y2='100%'><stop offset='0' stop-color='#bbb' " +
             "stop-opacity='.1'/><stop offset='1' stop-opacity='.1'/></linearGradient><clipPath id='a'><rect width='118' " +
