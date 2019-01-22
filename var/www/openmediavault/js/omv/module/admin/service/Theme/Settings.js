@@ -603,6 +603,6 @@ OMV.WorkspaceManager.registerPanel({
     id: 'settings',
     path: '/system/theme',
     text: _('Settings'),
-    position: 10,
+    position: 1,
     className: 'OMV.module.admin.service.theme.Settings'
 });

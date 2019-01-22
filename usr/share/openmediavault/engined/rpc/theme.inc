@@ -34,6 +34,8 @@ class OMVRpcServiceTheme extends \OMV\Rpc\ServiceAbstract
 
         $this->registerMethod('setFont');
         $this->registerMethod('resetFont');
+
+        $this->registerMethod('performUpdate');
     }
 
     public function getSettings($params, $context)
@@ -201,6 +203,14 @@ class OMVRpcServiceTheme extends \OMV\Rpc\ServiceAbstract
     {
         // run script to apply header text
         $cmd = new \OMV\System\Process("omv-mkconf", "reset_font_size_weight");
+        $cmd->setRedirect2to1();
+        $cmd->execute();
+    }
+
+    public function performUpdate($params, $context)
+    {
+        // run script to apply header text
+        $cmd = new \OMV\System\Process("omv-mkconf", "perform_update");
         $cmd->setRedirect2to1();
         $cmd->execute();
     }

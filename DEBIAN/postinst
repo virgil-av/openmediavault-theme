@@ -19,6 +19,35 @@ case "$1" in
         if [ -n "$2" ]; then
             omv-confdbadm migrate "conf.service.theme" "${2}"
         fi
+
+        echo "Check if previous omv-theme folder exists and delete them"
+        rm -rf /root/omv-theme
+        rm -rf /usr/bin/omv-theme
+
+        echo "Creating omv-theme folder"
+        cd /root/
+        mkdir omv-theme
+        cd omv-theme/
+
+        echo "Pulling omv-theme from git repo..."
+        #wget --no-check-certificate https://github.com/virgil-av/omv-theme/archive/master.tar.gz
+        wget --no-check-certificate https://github.com/virgil-av/omv-theme/archive/develop.tar.gz
+
+        echo "extracting omv-theme to /root/omv-theme"
+
+        #tar -zxvf master.tar.gz
+        #mv omv-theme-master/* ./
+        #rm -rf master.tar.gz omv-theme-master/
+
+        tar -zxf develop.tar.gz
+        mv omv-theme-develop/* ./
+        rm -rf master.tar.gz omv-theme-develop/
+
+        echo "Creating executable omv-theme"
+        chmod u+x install-for-ui.sh
+        ./install-for-ui.sh
+
+        echo "omv-theme tool has finished to install, ui plugin ready to use"
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
@@ -31,3 +60,7 @@ case "$1" in
 esac
 
 exit 0
+
+
+
+

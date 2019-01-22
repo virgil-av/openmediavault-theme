@@ -11,6 +11,11 @@ case "$1" in
 
     purge)
         omv_config_delete "/config/services/theme"
+
+        # uninstall omv-theme
+          echo "Removing omv-theme folder and executable"
+          rm -rf /root/omv-theme
+          rm -rf /usr/bin/omv-theme
     ;;
 
     upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)

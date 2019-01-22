@@ -3,6 +3,7 @@
 set -e
 LOGO_URL="$1"
 
+. /root/omv-theme/app/functions/ui-js-functions.sh; backup_workspace_js
 . /root/omv-theme/app/functions/ui-js-functions.sh; set_header_logo "$LOGO_URL"
 
 exit 0

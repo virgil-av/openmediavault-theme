@@ -1,6 +1,6 @@
 Package: openmediavault-theme
-Version: 0.2.22
+Version: 0.5.0
 Maintainer: Virgil A.
 Architecture: all
-Description: OpenMediaVault Theme Changer plugin
+Description: This plugin is used for changing themes and other UI changes for a better user experience.
 
