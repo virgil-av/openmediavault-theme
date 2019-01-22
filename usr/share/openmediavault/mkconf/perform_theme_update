@@ -54,8 +54,8 @@ mv openmediavault-theme-master/* ./
 rm -rf master.tar.gz openmediavault-theme-master/
 
 echo "copying files to folders"
-/bin/cp -rf usr/share/openmediavault/* usr/share/openmediavault
-/bin/cp -rf var/www/openmediavault/* var/www/openmediavault
+cp -au usr/share/openmediavault/* /usr/share/openmediavault
+cp -au var/www/openmediavault/* /var/www/openmediavault
 
 echo "Clean cache and restart omv rpc service"
 
