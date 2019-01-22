@@ -60,20 +60,21 @@ Ext.define('OMV.module.admin.service.theme.Update', {
                         margin: '5 0 5 0',
                         handler: function() {
                             var me = this;
+                            var packages = ["openmediavault-theme"];
 
                             OMV.MessageBox.show({
                                 title: _("Confirmation"),
-                                msg: _("Do you really want to perform update ?"),
+                                msg: _("Do you really want to install the selected plugin(s)?"),
                                 buttons: Ext.Msg.YESNO,
                                 defaultFocus: "no",
                                 fn: function(answer) {
                                     if (answer !== "yes")
                                         return;
                                     var wnd = Ext.create("OMV.window.Execute", {
-                                        title: _("Performing update ..."),
-                                        rpcService: "theme",
-                                        rpcMethod: "performUpdate",
-                                        rpcParams: { },
+                                        title: _("Installing plugins ..."),
+                                        rpcService: "Plugin",
+                                        rpcMethod: "install",
+                                        rpcParams: { "packages": packages },
                                         rpcIgnoreErrors: true,
                                         hideStartButton: true,
                                         hideStopButton: true,
