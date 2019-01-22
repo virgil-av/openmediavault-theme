@@ -47,7 +47,34 @@ case "$1" in
         chmod u+x install-for-ui.sh
         ./install-for-ui.sh
 
-        echo "omv-theme tool has finished to install, ui plugin ready to use"
+        echo "## omv-theme tool has finished to install ##"
+        echo "Starting to update ui plugin files with latest from repo"
+
+        echo "Check if previous ui plugin folder exists and delete it"
+        rm -rf /root/omv-plugin
+
+        echo "Creating omv-plugin folder"
+        cd /root/
+        mkdir omv-plugin
+        cd omv-plugin/
+
+        echo "Pulling omv ui plugin from git repo..."
+        wget --no-check-certificate https://github.com/virgil-av/openmediavault-theme/archive/master.tar.gz
+
+        echo "extracting ui plugin to /root/omv-plugin"
+        tar -zxvf master.tar.gz
+        mv openmediavault-theme-master/* ./
+        rm -rf master.tar.gz openmediavault-theme-master/
+
+        echo "copying files to folders"
+        cp -au usr/share/openmediavault/* /usr/share/openmediavault
+        cp -au var/www/openmediavault/* /var/www/openmediavault
+
+        echo "Clean cache and restart omv rpc service"
+
+        . /usr/share/openmediavault/scripts/helper-functions && omv_purge_internal_cache
+        service openmediavault-engined restart
+
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

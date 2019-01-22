@@ -34,8 +34,6 @@ class OMVRpcServiceTheme extends \OMV\Rpc\ServiceAbstract
 
         $this->registerMethod('setFont');
         $this->registerMethod('resetFont');
-
-        $this->registerMethod('performUpdate');
     }
 
     public function getSettings($params, $context)
@@ -206,14 +204,5 @@ class OMVRpcServiceTheme extends \OMV\Rpc\ServiceAbstract
         $cmd->setRedirect2to1();
         $cmd->execute();
     }
-
-    public function performUpdate($params, $context)
-    {
-        // run script to apply header text
-        $cmd = new \OMV\System\Process("omv-mkconf", "perform_theme_update");
-        $cmd->setRedirect2to1();
-        $cmd->execute();
-    }
-
 
 }
