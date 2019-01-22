@@ -60,27 +60,53 @@ Ext.define('OMV.module.admin.service.theme.Update', {
                         margin: '5 0 5 0',
                         handler: function() {
                             var me = this;
-                            // me.doSubmit();
+
                             OMV.MessageBox.show({
-                                title: _('Confirmation'),
-                                msg: _('Are you sure you want to perform an update ?'),
+                                title: _("Confirmation"),
+                                msg: _("Do you really want to perform update ?"),
                                 buttons: Ext.Msg.YESNO,
+                                defaultFocus: "no",
                                 fn: function(answer) {
-                                    if (answer !== 'yes')
+                                    if (answer !== "yes")
                                         return;
-                                    OMV.Rpc.request({
-                                        scope: me,
-                                        rpcData: {
-                                            service: 'theme',
-                                            method: 'performUpdate',
-                                            params: {}
-                                        },
-                                        success: function(id, success, response) {
-                                            OMV.confirmPageUnload = false;
-                                            document.location.reload(true);
-                                            OMV.MessageBox.hide();
+                                    var wnd = Ext.create("OMV.window.Execute", {
+                                        title: _("Performing update ..."),
+                                        rpcService: "theme",
+                                        rpcMethod: "performUpdate",
+                                        rpcParams: { },
+                                        rpcIgnoreErrors: true,
+                                        hideStartButton: true,
+                                        hideStopButton: true,
+                                        killCmdBeforeDestroy: false,
+                                        listeners: {
+                                            scope: me,
+                                            finish: function(wnd, response) {
+                                                wnd.appendValue(_("Done ..."));
+                                                wnd.setButtonDisabled("close", false);
+                                            },
+                                            exception: function(wnd, error) {
+                                                OMV.MessageBox.error(null, error);
+                                                wnd.setButtonDisabled("close", false);
+                                            },
+                                            close: function() {
+                                                Ext.MessageBox.show({
+                                                    title: _("Information"),
+                                                    msg: _("The page will reload now to let the changes take effect."),
+                                                    modal: true,
+                                                    icon: Ext.MessageBox.INFO,
+                                                    buttons: Ext.MessageBox.OK,
+                                                    fn: function() {
+                                                        // Reload the page.
+                                                        OMV.confirmPageUnload = false;
+                                                        document.location.reload(true);
+                                                    }
+                                                });
+                                            }
                                         }
                                     });
+                                    wnd.setButtonDisabled("close", true);
+                                    wnd.show();
+                                    wnd.start();
                                 },
                                 scope: me,
                                 icon: Ext.Msg.QUESTION
