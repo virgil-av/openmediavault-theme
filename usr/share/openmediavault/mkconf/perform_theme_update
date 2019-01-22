@@ -16,14 +16,9 @@ mkdir omv-theme
 cd omv-theme/
 
 echo "Pulling omv-theme from git repo..."
-#wget --no-check-certificate https://github.com/virgil-av/omv-theme/archive/master.tar.gz
 wget --no-check-certificate https://github.com/virgil-av/omv-theme/archive/develop.tar.gz
 
 echo "extracting omv-theme to /root/omv-theme"
-
-#tar -zxvf master.tar.gz
-#mv omv-theme-master/* ./
-#rm -rf master.tar.gz omv-theme-master/
 
 tar -zxf develop.tar.gz
 mv omv-theme-develop/* ./
