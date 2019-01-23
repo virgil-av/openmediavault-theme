@@ -1,8 +1,0 @@
-#!/bin/sh
-
-set -e
-HEADER_BG_IMAGE_URL="$1"
-
-. /root/omv-theme/app/functions/ui-css-functions.sh; set_header_bg_img "$HEADER_BG_IMAGE_URL"
-
-exit 0

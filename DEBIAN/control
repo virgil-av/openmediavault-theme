@@ -1,8 +1,0 @@
-Package: openmediavault-theme
-Version: 0.5.0
-Maintainer: Virgil A.
-Architecture: all
-Homepage: https://github.com/virgil-av/openmediavault-theme
-Description: OpenMediaVault Theme plugin
- Plugin to change ui themes and ui manipulation
-

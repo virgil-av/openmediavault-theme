@@ -1,8 +1,0 @@
-#!/bin/sh
-
-set -e
-THEME_NAME="$1"
-
-. /root/omv-theme/app/functions/themes-functions.sh; apply_theme "$THEME_NAME"
-
-exit 0

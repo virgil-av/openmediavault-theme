@@ -1,8 +1,0 @@
-#!/bin/sh
-
-set -e
-HEADER_BG_COLOR="$1"
-
-. /root/omv-theme/app/functions/ui-css-functions.sh; set_header_background_color "$HEADER_BG_COLOR"
-
-exit 0
