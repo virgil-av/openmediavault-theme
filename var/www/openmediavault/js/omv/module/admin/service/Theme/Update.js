@@ -28,8 +28,11 @@ Ext.define('OMV.module.admin.service.theme.Update', {
             "y='150' fill='#010101' fill-opacity='.3' transform='scale(.1)' textLength='630'>omv-theme</text>" +
             "<text x='375' y='140' transform='scale(.1)' textLength='630'>omv-theme</text><text x='945' y='150' " +
             "fill='#010101' fill-opacity='.3' transform='scale(.1)' textLength='350'>v3.0.0</text><text x='945' y='140' " +
-            "transform='scale(.1)' textLength='350'>v3.0.0</text></g> </svg></div><br><br><div> <strong>Check the " +
-            "forums for updates, if the forum version are higher than the above just press the update button above." +
+            "transform='scale(.1)' textLength='350'>v3.0.0</text></g> </svg></div><br><br>" +
+            "<div> <strong>Latest version available:</strong></div><br><img src=\"https://img.shields.io/badge/endpoint.svg?url=https://raw.githubusercontent.com/virgil-av/openmediavault-theme/deb/plugin-version.json\" alt=\"\"> " +
+            "<img src=\"https://img.shields.io/badge/endpoint.svg?url=https://raw.githubusercontent.com/virgil-av/openmediavault-theme/deb/tool-version.json\" alt=\"\"></div>" +
+            "<br><br>" +
+            "<div> <strong>Check the forums for updates, if the forum version are higher than the above just press the update button above." +
             "</strong></div><br><br><div style='color: red; font-size:10px'> * Beware if you updated the omv-theme via " +
             "the terminal the UI will still display the old version, use the button above to update</div>");
         me.callParent(arguments);
