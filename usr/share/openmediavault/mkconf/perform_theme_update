@@ -53,3 +53,213 @@ cp -au usr/share/openmediavault/* /usr/share/openmediavault
 cp -au var/www/openmediavault/* /var/www/openmediavault
 
 exit 0
+
+
+
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following NEW packages will be installed:
+  openmediavault-theme
+0 upgraded, 1 newly installed, 0 to remove and 82 not upgraded.
+Need to get 0 B/307 kB of archives.
+After this operation, 0 B of additional disk space will be used.
+Get:1 file:/var/cache/openmediavault/archives  openmediavault-theme 0.5.0 [307 kB]
+Selecting previously unselected package openmediavault-theme.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 46224 files and directories currently installed.)
+Preparing to unpack ..././openmediavault-theme.deb ...
+Unpacking openmediavault-theme (0.5.0) ...
+Setting up openmediavault-theme (0.5.0) ...
+Updating configuration database ...
+Check if previous omv-theme folder exists and delete them
+Creating omv-theme folder
+Pulling omv-theme from git repo...
+--2018-12-22 20:47:39--  https://github.com/virgil-av/omv-theme/archive/master.tar.gz
+Resolving github.com (github.com)... 140.82.118.4, 140.82.118.3
+Connecting to github.com (github.com)|140.82.118.4|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://codeload.github.com/virgil-av/omv-theme/tar.gz/master [following]
+--2018-12-22 20:47:40--  https://codeload.github.com/virgil-av/omv-theme/tar.gz/master
+Resolving codeload.github.com (codeload.github.com)... 192.30.253.121, 192.30.253.120
+Connecting to codeload.github.com (codeload.github.com)|192.30.253.121|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-gzip]
+Saving to: 'master.tar.gz'
+
+master.tar.gz           [<=>                 ]       0  --.-KB/s               master.tar.gz           [ <=>                ]  28.35K  --.-KB/s    in 0.08s
+
+2018-12-22 20:47:40 (341 KB/s) - 'master.tar.gz' saved [29032]
+
+extracting omv-theme to /root/omv-theme
+omv-theme-master/
+omv-theme-master/.gitignore
+tar: omv-theme-master/.gitignore: time stamp 2019-01-09 12:23:16 is 1524935.451931663 s in the future
+omv-theme-master/LICENSE
+tar: omv-theme-master/LICENSE: time stamp 2019-01-09 12:23:16 is 1524935.451381009 s in the future
+omv-theme-master/README.md
+tar: omv-theme-master/README.md: time stamp 2019-01-09 12:23:16 is 1524935.450783849 s in the future
+omv-theme-master/app/
+omv-theme-master/app/functions/
+omv-theme-master/app/functions/menu-configs.sh
+tar: omv-theme-master/app/functions/menu-configs.sh: time stamp 2019-01-09 12:23:16 is 1524935.449840095 s in the future
+omv-theme-master/app/functions/menu-functions.sh
+tar: omv-theme-master/app/functions/menu-functions.sh: time stamp 2019-01-09 12:23:16 is 1524935.449342527 s in the future
+omv-theme-master/app/functions/themes-functions.sh
+tar: omv-theme-master/app/functions/themes-functions.sh: time stamp 2019-01-09 12:23:16 is 1524935.448876045 s in the future
+omv-theme-master/app/functions/ui-css-functions.sh
+tar: omv-theme-master/app/functions/ui-css-functions.sh: time stamp 2019-01-09 12:23:16 is 1524935.44846109 s in the future
+omv-theme-master/app/functions/ui-js-functions.sh
+tar: omv-theme-master/app/functions/ui-js-functions.sh: time stamp 2019-01-09 12:23:16 is 1524935.44815931 s in the future
+omv-theme-master/app/menues/
+tar: omv-theme-master/app/functions: time stamp 2019-01-09 12:23:16 is 1524935.447835648 s in the future
+omv-theme-master/app/menues/css-plugins-submenu.sh
+tar: omv-theme-master/app/menues/css-plugins-submenu.sh: time stamp 2019-01-09 12:23:16 is 1524935.447429737 s in the future
+omv-theme-master/app/menues/js-plugins-submenu.sh
+tar: omv-theme-master/app/menues/js-plugins-submenu.sh: time stamp 2019-01-09 12:23:16 is 1524935.446531217 s in the future
+omv-theme-master/app/menues/main-menu.sh
+tar: omv-theme-master/app/menues/main-menu.sh: time stamp 2019-01-09 12:23:16 is 1524935.446135647 s in the future
+omv-theme-master/app/menues/themes-submenu.sh
+tar: omv-theme-master/app/menues/themes-submenu.sh: time stamp 2019-01-09 12:23:16 is 1524935.445924706 s in the future
+omv-theme-master/app/omv-main.sh
+tar: omv-theme-master/app/menues: time stamp 2019-01-09 12:23:16 is 1524935.445769934 s in the future
+tar: omv-theme-master/app/omv-main.sh: time stamp 2019-01-09 12:23:16 is 1524935.44569875 s in the future
+omv-theme-master/backup/
+tar: omv-theme-master/app: time stamp 2019-01-09 12:23:16 is 1524935.445548822 s in the future
+omv-theme-master/backup/.gitadd
+tar: omv-theme-master/backup/.gitadd: time stamp 2019-01-09 12:23:16 is 1524935.44535626 s in the future
+omv-theme-master/css/
+tar: omv-theme-master/backup: time stamp 2019-01-09 12:23:16 is 1524935.445194678 s in the future
+omv-theme-master/css/background-image.css
+tar: omv-theme-master/css/background-image.css: time stamp 2019-01-09 12:23:16 is 1524935.445016917 s in the future
+omv-theme-master/css/font.css
+tar: omv-theme-master/css/font.css: time stamp 2019-01-09 12:23:16 is 1524935.444848138 s in the future
+omv-theme-master/css/header-logo.css
+tar: omv-theme-master/css/header-logo.css: time stamp 2019-01-09 12:23:16 is 1524935.444644079 s in the future
+omv-theme-master/css/menu.css
+tar: omv-theme-master/css/menu.css: time stamp 2019-01-09 12:23:16 is 1524935.444490563 s in the future
+omv-theme-master/css/remove-header.css
+tar: omv-theme-master/css/remove-header.css: time stamp 2019-01-09 12:23:16 is 1524935.444335015 s in the future
+omv-theme-master/images/
+tar: omv-theme-master/css: time stamp 2019-01-09 12:23:16 is 1524935.44422841 s in the future
+omv-theme-master/images/.gitkeep
+tar: omv-theme-master/images/.gitkeep: time stamp 2019-01-09 12:23:16 is 1524935.4440513 s in the future
+omv-theme-master/install-omv-theme.sh
+tar: omv-theme-master/images: time stamp 2019-01-09 12:23:16 is 1524935.443919444 s in the future
+tar: omv-theme-master/install-omv-theme.sh: time stamp 2019-01-09 12:23:16 is 1524935.443857229 s in the future
+omv-theme-master/javascript/
+omv-theme-master/javascript/custom-header.js
+tar: omv-theme-master/javascript/custom-header.js: time stamp 2019-01-09 12:23:16 is 1524935.443632755 s in the future
+omv-theme-master/javascript/header-logo.js
+tar: omv-theme-master/javascript/header-logo.js: time stamp 2019-01-09 12:23:16 is 1524935.443486245 s in the future
+omv-theme-master/javascript/header-text.js
+tar: omv-theme-master/javascript/header-text.js: time stamp 2019-01-09 12:23:16 is 1524935.443321727 s in the future
+omv-theme-master/javascript/let-it-snow.js
+tar: omv-theme-master/javascript/let-it-snow.js: time stamp 2019-01-09 12:23:16 is 1524935.442871092 s in the future
+omv-theme-master/omv-theme.sh
+tar: omv-theme-master/javascript: time stamp 2019-01-09 12:23:16 is 1524935.442652951 s in the future
+tar: omv-theme-master/omv-theme.sh: time stamp 2019-01-09 12:23:16 is 1524935.442535505 s in the future
+omv-theme-master/themes/
+omv-theme-master/themes/theme-black-and-white.css
+tar: omv-theme-master/themes/theme-black-and-white.css: time stamp 2019-01-09 12:23:16 is 1524935.441918701 s in the future
+omv-theme-master/themes/theme-black-and-white.scss
+tar: omv-theme-master/themes/theme-black-and-white.scss: time stamp 2019-01-09 12:23:16 is 1524935.441763549 s in the future
+omv-theme-master/themes/theme-blackish.css
+tar: omv-theme-master/themes/theme-blackish.css: time stamp 2019-01-09 12:23:16 is 1524935.441574464 s in the future
+omv-theme-master/themes/theme-blackish.scss
+tar: omv-theme-master/themes/theme-blackish.scss: time stamp 2019-01-09 12:23:16 is 1524935.441408393 s in the future
+omv-theme-master/themes/theme-condensed-black.css
+tar: omv-theme-master/themes/theme-condensed-black.css: time stamp 2019-01-09 12:23:16 is 1524935.441253697 s in the future
+omv-theme-master/themes/theme-condensed-black.scss
+tar: omv-theme-master/themes/theme-condensed-black.scss: time stamp 2019-01-09 12:23:16 is 1524935.441081691 s in the future
+omv-theme-master/themes/theme-dracula.css
+tar: omv-theme-master/themes/theme-dracula.css: time stamp 2019-01-09 12:23:16 is 1524935.440924219 s in the future
+omv-theme-master/themes/theme-dracula.scss
+tar: omv-theme-master/themes/theme-dracula.scss: time stamp 2019-01-09 12:23:16 is 1524935.440519798 s in the future
+omv-theme-master/themes/theme-green-peace.css
+tar: omv-theme-master/themes/theme-green-peace.css: time stamp 2019-01-09 12:23:16 is 1524935.440395471 s in the future
+omv-theme-master/themes/theme-green-peace.scss
+tar: omv-theme-master/themes/theme-green-peace.scss: time stamp 2019-01-09 12:23:16 is 1524935.440236041 s in the future
+omv-theme-master/themes/theme-old-gold.css
+tar: omv-theme-master/themes/theme-old-gold.css: time stamp 2019-01-09 12:23:16 is 1524935.440038463 s in the future
+omv-theme-master/themes/theme-old-gold.scss
+tar: omv-theme-master/themes/theme-old-gold.scss: time stamp 2019-01-09 12:23:16 is 1524935.439870847 s in the future
+omv-theme-master/themes/theme-santas-elf.css
+tar: omv-theme-master/themes/theme-santas-elf.css: time stamp 2019-01-09 12:23:16 is 1524935.439707086 s in the future
+omv-theme-master/themes/theme-santas-elf.scss
+tar: omv-theme-master/themes/theme-santas-elf.scss: time stamp 2019-01-09 12:23:16 is 1524935.439445206 s in the future
+omv-theme-master/themes/theme-sour-cherry.css
+tar: omv-theme-master/themes/theme-sour-cherry.css: time stamp 2019-01-09 12:23:16 is 1524935.439278094 s in the future
+omv-theme-master/themes/theme-sour-cherry.scss
+tar: omv-theme-master/themes/theme-sour-cherry.scss: time stamp 2019-01-09 12:23:16 is 1524935.439100981 s in the future
+omv-theme-master/themes/theme-triton.scss
+tar: omv-theme-master/themes/theme-triton.scss: time stamp 2019-01-09 12:23:16 is 1524935.438934287 s in the future
+tar: omv-theme-master/themes: time stamp 2019-01-09 12:23:16 is 1524935.438791032 s in the future
+tar: omv-theme-master: time stamp 2019-01-09 12:23:16 is 1524935.438707148 s in the future
+Creating executable omv-theme
+chmod: cannot access 'install-for-ui.sh': No such file or directory
+dpkg: error processing package openmediavault-theme (--configure):
+ subprocess installed post-installation script returned error exit status 1
+Processing triggers for openmediavault (4.1.12) ...
+Updating locale files ...
+Updating file permissions ...
+Purging internal cache ...
+Restarting engine daemon ...
+Errors were encountered while processing:
+ openmediavault-theme
+
+>>> *************** Error ***************
+
+<<< *************************************
+
+>>> *************** Error ***************
+
+<<< *************************************
+
+>>> *************** Error ***************
+
+<<< *************************************
+
+>>> *************** Error ***************
+
+<<< *************************************
+
+>>> *************** Error ***************
+
+<<< *************************************
+
+>>> *************** Error ***************
+
+<<< *************************************
+
+>>> *************** Error ***************
+
+<<< *************************************
+
+>>> *************** Error ***************
+
+<<< *************************************
+
+>>> *************** Error ***************
+
+<<< *************************************
+
+>>> *************** Error ***************
+
+<<< *************************************
+
+>>> *************** Error ***************
+
+<<< *************************************
+
+>>> *************** Error ***************
+
+<<< *************************************
+
+>>> *************** Error ***************
+
+<<< *************************************
+
+>>> *************** Error ***************
+
+<<< *************************************
