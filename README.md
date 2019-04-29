@@ -17,7 +17,7 @@ Homepage: github.com/virgil-av/openmediavault-theme
 Description: Plugin to change ui themes and ui manipulation
 
 Download link: 
-github.com/virgil-av/openmedia…/openmediavault-theme.deb
+[Download deb file](https://github.com/virgil-av/openmediavault-theme/raw/deb/openmediavault-theme.deb)
 
 
 Requirements:
